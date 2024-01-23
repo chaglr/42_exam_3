@@ -1,11 +1,11 @@
 
 // bir karakter dizisinde belirli bir karakteri arar ve bulduğunda o karakterin adresini döndürür.
-char *ft_strchr(char *s, int c)
+char *ft_strchr(char *str, int c)
 {
-	while (*s)
+	while (*str)
 	{
-		if (*s == (char *)c)
-			return (*s)
+		if (*s == (char)c)
+			return ((char *)str);
 	}
 	return (NULL);
 }
@@ -41,13 +41,15 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 char *ft_strdup(const char *src)
 {
-	char *dst;
-	size_t src_len + 1; //+1 null char
-	dst = malloc(len);
+	char *copy;
+	size_t src_len; //+1 null char
+
+	src_len = ft_strlen(src) +1;
+	dst = malloc(src_len);
 	if (dst == NULL)
 		return (NULL);
-	ft_strlcpy(dst, src, src_len);
-	return (dst);
+	ft_strlcpy(copy, src, src_len);
+	return (copy);
 }
 // join char arrayinin başını return eder.
 char *ft_strjoin(char *s1, const char *s2, size_t s2_len)
