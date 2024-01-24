@@ -82,5 +82,33 @@ char *strdup(const char *str)
 	return(copy);
 }
 
+//join two char array
+char *str_join(char s1, const char s2, size_t s2_len)
+{
+	//len belirle
+	//malloc la join e lenler +1 kadar bellek ata
+	//ft_strlcpy ile s1 i s1_len kadar joine ekle.
+	//ft_strcpy ile join+s1_len, e s2 yi  s2_len+1 kadar ekle
+	//s1 freele
+	//join return et.
+	if(!s1 || !s2)
+		return (NULL);
+	size_t s1_len = ft_strlen(s1);
+	char * join = (char *)malloc((s1_len + 1 + s2_len)*sizeof(char);
+	ft_strlcpy(join, s1, s1_len+1);
+	ft_strlcpy((join + s1_len), s2, s2len+1);
+	free(s1);
+	return(join);
+}
 
-char *str_join(char s1, ci)
+char *strjoin(char *s1, const char *s2, size_t s2_len)
+{
+	if(!s1 || !s2)
+		return (NULL);
+	size_t len = ft_strlen(s1);
+	char * join = (char *)malloc(sizeof(char) * s2_len + s1_len +1);
+	ft_strlcpy(join, s1, s1_len +1);
+	ft_strlcpy((join +s1_len),s2, s2_len+1);
+	free(s1);
+	return(join);
+}
