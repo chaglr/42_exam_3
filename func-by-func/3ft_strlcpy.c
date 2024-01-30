@@ -23,5 +23,24 @@ char *ftt_strlcpy(char *dest, const char src, size_t len)
 			i++;
 		}
 		dest[i] = '\0';
+		return(len_src);
 	}
+}
+// char src[] = "Merhaba dünya";
+// char dst[10];
+// size_t max_copy_size = 10;
+
+char *strlcpy(char *s1, const char s2, size_t len_s1)
+{
+	size_t len_s2 = ft_strlen(s2);
+	size_t i = 0;
+
+	while(i < len_s1 -1 && i < len_s2 )
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return(len_s2);
+
 }

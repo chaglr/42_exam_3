@@ -9,7 +9,7 @@ char	*ft_strchr(char *s, int c)
 	while (*s)
 	{
 		if (*s == (char)c)
-			return ((char *)s);
+			return (s);
 		s++;
 	}
 	return (NULL);
@@ -76,6 +76,8 @@ char	*ft_strjoin(char *s1, char const *s2, size_t len)
 	return (join);
 }
 
+
+
 char	*get_next_line(int fd)
 {
 	static char	buf[BUFFER_SIZE + 1];
@@ -108,27 +110,12 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-// #include <fcntl.h>  // open fonksiyonu için
-// #include <unistd.h> // close fonksiyonu için
-// #include <stdio.h>
-// int main(void)
-// {
-//     int fd;
-//     char *line;
-
-//     fd = open("test.txt", O_RDONLY); // 'test.txt' isimli dosyayı aç
-//     if (fd == -1)
-//     {
-//         perror("Dosya açılamadı");
-//         return (1);
-//     }
-
-//      while ((line = get_next_line(fd)) != NULL)
-//      {
-//         printf("%s", line = get_next_line(fd));
-//         free(line);
-//      }
-
-//     close(fd);
-//     return (0);
-// }
+ #include <stdio.h>
+ #include <fcntl.h>
+ int main(void)
+ {
+    int fd;
+    fd = open("test.txt", O_RDONLY);
+    printf("%s", get_next_line(fd));
+	 printf("%s", get_next_line(fd));
+ }
