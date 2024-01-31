@@ -63,9 +63,9 @@ char *ft_strjoin(char *s1, const char *s2, size_t s2_len)
 	if (!join)
 		return (NULL);
 	// once s1 i joine ekler.. ft_strlen sondaki null  karakteri almadigindan +1 gerekiyor.
-	ft_strlcpy(join, s1, s1_len + 1);
+	ft_strlcpy(join, s1, s1_len+1);
 	// sonra joinden s1'in sonuna gideriz (join+s1_len) ve s2'yi ekleriz s2_len kadar.
-	ft_strlcpy(join + s1_len, s2, len + 1);
+	ft_strlcpy(join + s1_len, s2, s2_len+1);
 	// Eski String'in Serbest Bırakılması: s1 string'i için ayrılan bellek free kullanılarak serbest bırakılır.
 	free(s1);
 	return (join);
