@@ -1,0 +1,10 @@
+This is a sample text file.
+It contains multiple lines of text.
+Some of these lines are empty.
+
+But that's not all.
+There are also lines that are longer than the buffer size used in get_next_line.
+This means that the function will have to read the file multiple times to get these lines.
+
+And finally, there is a line that does not end with a newline character.
+This is an edge case that get_next_line should be able to handle as well.
