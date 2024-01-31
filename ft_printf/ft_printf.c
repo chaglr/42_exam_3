@@ -43,7 +43,9 @@ int	ft_printf(const char *format, ...)
 				put_digit((long long int)va_arg(pointer, unsigned int), 16, &length);
 		}
 		else
+		{
 			length += write(1, format, 1);
+		}
 		format++;
 	}
 	return (va_end(pointer), length);
